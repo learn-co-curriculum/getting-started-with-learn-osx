@@ -60,8 +60,26 @@ gem install learn-co
 
 If you run `learn hello`, you can walk through the setup of connecting this interface to your account on learn.co.
 
+## Java and Ant
+
+`brew` makes [Java](https://java.com/en/download/) and [Ant](http://ant.apache.org/) incredibly easy to install. Just run
+
+```bash
+brew cask install java
+brew install ant
+```
+
+and you should be good to go.
+
 ## Wrap-up
 
 You now have access to the `learn` command in any of the upcoming lessons. `learn` will run your tests, and `learn submit` will submit your work.
 
 Happy learning!
+
+
+## Resources
+
+- [Guide to installing Ruby (on Rails) on OS X](https://gorails.com/setup/osx/10.11-el-capitan); **ignore the Rails-specific bits**
+- [Homebrew](http://brew.sh/)
+- [rbenv](https://github.com/rbenv/rbenv)
