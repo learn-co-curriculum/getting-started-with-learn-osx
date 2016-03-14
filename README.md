@@ -1,75 +1,67 @@
-# Navigating Curriculum on Learn
+# Getting Started with Learn on OS X
 
 ## Overview
 
-At this point, you've already created a Learn account, set up your local development environment, and confirmed that your dev environment can talk to Learn. Great!
+At this point, you probably already have an environment setup that you like – we don't want to mess with that. We _do_, however, want to make sure that your environment can talk to Learn.
 
-Now, you're here in Learn and ready to start learning.
+## Homebrew (no, not that kind of homebrew)
 
-Before you start, let's just get a little more familiar with how Learn works. In the handful of lessons that follow, we'll walk you through a few things:
+Some might argue that OS X loses to Linux when it comes to package management; those folks haven't used `brew`.
 
-1. How content is organized on Learn
-2. How to use your Terminal
-3. The standard Learn workflow
+What's great about [Homebrew](http://brew.sh/) is that it helps to isolate your development environment(s) from your system environments. You won't have to worry about bricking your machine with a botched Python upgrade, for example.
 
-Let's start by talking about the different parts of the curriculum on Learn.
+To get started, simply open your terminal (by default, `Terminal.app`) and enter
 
-## All About Lessons
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
-The individual pieces of curriculum on Learn are called "lessons."
+That's it!
 
-### Tracks and Navigation
+## A Ruby Setup that You'll Like
 
-A "track" is composed of many lessons, often organized into topics.
+OS X comes with Ruby (2.0 by default) – don't use it. A bunch of system libraries and utilities depend on it, and if you end up changing something, your system could break in weird and unexpected ways.
 
-Click on the track name above to pop open Track Navigation, which allows you to view topics and units and move between lessons. 
+Instead, use `brew` to install a Ruby version manager – this gives you greater flexibility and keeps your system Ruby untouched.
 
-![Click for Navigation dropdown](https://curriculum-content.s3.amazonaws.com/intro-to-learn/navigating_curriculum.png)
+(Note: Some of you might be complaining about installing Ruby for a series of Java lessons. Learn's software depends on Ruby, and while we won't be covering it much here, Ruby is an interesting language and one that's used all over the place in software engineering (especially web development). You don't have to like it, but you'd do well to learn it.)
 
-![View Navigation dropdown](https://curriculum-content.s3.amazonaws.com/intro-to-learn/navigating_curriculum_2.png)
+We're going to use [`rbenv`](https://github.com/rbenv/rbenv#homebrew-on-mac-os-x) as our version manager. Install it with `brew`:
 
-You must complete a lesson before you advance to the next one.
+```bash
+brew install rbenv ruby-build
+```
 
-Lessons you've completed will be filled in with a green circle and your current lesson will be orange.
+After installation finishes, run `rbenv init` and follow the instructions that print out. For the lazy, you can probably get by with
 
-### Lesson Types
+```bash
+echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+```
 
-There are two types of lessons on Learn: READMEs and Labs.
+Finally, install Ruby 2.2.3:
 
-#### Labs
+```bash
+rbenv install 2.2.3
+rbenv global 2.2.3
+```
 
-Labs are lessons with a coding challenge you must complete. A lab will require you to write code and submit a solution.
+Verify the installation with `ruby -v`. It should print something like `ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin15]`.
 
-All labs include a README that you will see on Learn. The lab README will describe the objectives, overview, and instructions for the code you must write. You should definitely read the lab README. If you're confused at any point, go back to the README.
+If any of the above steps don't work exactly as expected, be sure to restart your terminal session and try again before assuming something is broken.
 
-In the following lessons, we're going to show you how to use `git` and GitHub to work on a lab and how to automate everything by using our `learn` CLI.
 
-You'll know if a lesson on Learn is a lab by the actions the right column asks you to take. Labs will display the following in the right:
+## The Learn Gem
 
-![Lab](https://curriculum-content.s3.amazonaws.com/intro-to-learn/right_rail_lab.png)
+Ruby packages are called "gems." Learn provides a command line interface as a gem; you can install it with
 
-#### READMEs
+``` bash
+gem install learn-co
+```
 
-READMEs are lessons that only have instructional content. They are designed to teach you something without challenging you to practice or implement the concept directly. This current lesson you are reading is a README.
+If you run `learn hello`, you can walk through the setup of connecting this interface to your account on learn.co.
 
-READMEs provide context and exposition on a topic by breaking concepts down. READMEs are how you learn enough to solve a lab.
+## Wrap-up
 
-As you can probably tell already, Learn is a big fan of the written word. Some READMEs have videos, but our expectation is that you also do the reading. The video augments the content, it does not replace it.
+You now have access to the `learn` command in any of the upcoming lessons. `learn` will run your tests, and `learn submit` will submit your work.
 
-You're going to have to do a lot of reading on Learn. We know other platforms make heavy use of 3-6 minute videos and we're going to continue to experiment with that medium, but for now, the majority of the content on Learn is text. We believe that with all the details and syntax involved in code, and since being a professional programmer is basically reading and writing text all day, the best way to learn to code is through reading and writing code, not watching videos.
-
-Some READMEs also contain brief interactive elements such as quizzes or little in-browser coding challenges.
-
-Once you've completed a README, you should click the "I'm Done" button on the right. The "Next Lesson" button will light up, allowing you to proceed.
-
-![Readme not done](https://curriculum-content.s3.amazonaws.com/intro-to-learn/right_rail_readme_not_done.png)
-
-![Readme done](https://curriculum-content.s3.amazonaws.com/intro-to-learn/right_rail_readme_done.png)
-
-## Go!
-
-Seeing as this lesson is a README, you're now done and ready to go to the next lesson. Click the "I'm Done" button and proceed to the next lesson.
-
-Happy Learning!
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/navigating-curriculum-on-learn' title='Navigating Curriculum on Learn'>Navigating Curriculum on Learn</a> on Learn.co and start learning to code for free.</p>
+Happy learning!
