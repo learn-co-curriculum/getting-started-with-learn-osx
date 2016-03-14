@@ -38,11 +38,11 @@ After installation finishes, run `rbenv init` and follow the instructions that p
 echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
 ```
 
-Finally, install Ruby 2.2.3:
+Finally, install Ruby 2.3.0:
 
 ```bash
-rbenv install 2.2.3
-rbenv global 2.2.3
+rbenv install 2.3.0
+rbenv global 2.3.0
 ```
 
 Verify the installation with `ruby -v`. It should print something like `ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin15]`.
