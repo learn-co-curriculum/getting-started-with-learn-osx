@@ -4,61 +4,50 @@
 
 At this point, you probably already have an environment setup that you like – we don't want to mess with that. We _do_, however, want to make sure that your environment can talk to Learn.
 
-## Homebrew (no, not that kind of homebrew)
+# Setup
 
-Some might argue that OS X loses to Linux when it comes to package management; those folks haven't used `brew`.
+## Setting Up Your Environment for Learn.co
 
-What's great about [Homebrew](http://brew.sh/) is that it helps to isolate your development environment(s) from your system environments. You won't have to worry about bricking your machine with a botched Python upgrade, for example.
+You need a proper development environment to learn to code. Whether you're learning Web Development, with a focus on Ruby, Python, or Javascript; or Mobile Development, with a focus on Objective-C & iOS or Java & Android; this guide is going to go through the manual steps you can take to set up your environment to work with Learn.co .
 
-To get started, simply open your terminal (by default, `Terminal.app`) and enter
+## Automating the Setup with Environmentalizer
 
-```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+Normally we setup your computer using the [Learn OSX Companion application](https://flatironschool-static.s3.amazonaws.com/learn.zip). That is definitely the easiest way to set up your computer.
 
-That's it!
+If you use that app, a Github account is all you need (and you presumably already have one, since you're reading this document!).
 
-## A Ruby Setup that You'll Like
+### **If you use the Learn Companion App, you don't need to continue reading this guide; you are done!**
 
-OS X comes with Ruby (2.0 by default) – don't use it. A bunch of system libraries and utilities depend on it, and if you end up changing something, your system could break in weird and unexpected ways.
+*If you're curious, or want more control over your environment, feel free to continue on for manual instructions.*
 
-Instead, use `brew` to install a Ruby version manager – this gives you greater flexibility and keeps your system Ruby untouched.
+## About the Learn App
 
-(Note: Some of you might be complaining about installing Ruby for a series of Java lessons. Learn's software depends on Ruby, and while we won't be covering it much here, Ruby is an interesting language and one that's used all over the place in software engineering (especially web development). You don't have to like it, but you'd do well to learn it.)
+That application actually just uses a BASH script called [Environmentalizer](https://github.com/learn-co-curriculum/setup-with-environmentalizer).
 
-We're going to use [`rbenv`](https://github.com/rbenv/rbenv#homebrew-on-mac-os-x) as our version manager. Install it with `brew`:
+You can either choose to run that script manually or proceed with this guide to install the requirements as you see fit.
 
-```bash
-brew install rbenv ruby-build
-```
+## Manual Requirements
 
-After installation finishes, run `rbenv init` and follow the instructions that print out. For the lazy, you can probably get by with
+In general the list of requirements for using Learn are:
 
-```bash
-echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
-```
+1. A [GitHub](https://github.com/join) account. You can use the free account on GitHub—you won't need private repositories at this point.
 
-Finally, install Ruby 2.3.0:
+2. You should have your GitHub account tied to your shell preferably via [SSH](https://help.github.com/articles/generating-ssh-keys/) but you can use [OSX Keychains](https://help.github.com/articles/updating-credentials-from-the-osx-keychain/).
 
-```bash
-rbenv install 2.3.0
-rbenv global 2.3.0
-```
+3. You'll need a way to compile software. If you're on OSX, the best thing you can do is use [XCode](https://developer.apple.com/xcode/downloads/) and [XCode Command Line Tools](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) [download for 10.10 XCode 6.3.1](http://adcdownload.apple.com/Developer_Tools/Command_Line_Tools_OS_X_10.10_for_Xcode_6.3.1/commandlinetoolsosx10.10forxcode6.3.1.dmg) to get GCC.
 
-Verify the installation with `ruby -v`. It should print something like `ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-darwin15]`.
+4. You'll probably need a package manager of some sort. We love [Homebrew](http://brew.sh/) on OSX.
 
-If any of the above steps don't work exactly as expected, be sure to restart your terminal session and try again before assuming something is broken.
+5. You're going to need [git](http://git-scm.com/downloads). It generally comes with most modern operating systems, can be installed via Homebrew, apt-get, and most package managers easily. 
 
+6. A Ruby Interpreter. Having a working interpreter is a great idea because so much tooling is built in Ruby. This is true for Web Development with Python or Javascript, and even for Mobile Development with iOS & XCode. If you can type `ruby -v` and not get an error, you probably have enough of a Ruby environment. If you are studying Web Development with Ruby (such as the Rails framework) you definitely need a great Ruby environment. We love [RVM](https://rvm.io/) for managing Ruby versions and environments.
 
-## The Learn Gem
+7. The `learn` gem. Simply type: `gem install learn-co` or if you get a permissions error, `sudo gem install learn-co`. Then type in `learn` to configure it with your github account and you'll be all set.
 
-Ruby packages are called "gems." Learn provides a command line interface as a gem; you can install it with
+8. A Text Editor. For iOS, XCode is a great IDE. But you'll find the free editors [Sublime Text](http://www.sublimetext.com/) and [Atom](https://atom.io/) useful anyway so go ahead an install them.
 
-``` bash
-gem install learn-co
-```
+Those are the absolute requirements.
 
-If you run `learn hello`, you can walk through the setup of connecting this interface to your account on learn.co.
 
 ## Java and Ant
 
@@ -82,4 +71,3 @@ Happy learning!
 
 - [Guide to installing Ruby (on Rails) on OS X](https://gorails.com/setup/osx/10.11-el-capitan); **ignore the Rails-specific bits**
 - [Homebrew](http://brew.sh/)
-- [rbenv](https://github.com/rbenv/rbenv)
