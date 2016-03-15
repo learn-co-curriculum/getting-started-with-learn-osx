@@ -18,6 +18,26 @@ To get started, simply open your terminal (by default, `Terminal.app`) and enter
 
 That's it!
 
+## Git
+
+You'll need to install [Git](https://git-scm.com/) to interact with the Learn platform. We'll cover Git in greater depth later on, but for now you should know that it's _source control management_ software. That's a fancy way of saying that it helps keep track of revisions and changes to your code.
+
+To install Git (and a bunch of other useful software), open your terminal and try to enter `git` — it will most likely fail and prompt you to install the OS X Command Line Tools. Go ahead and install them.
+
+## Configuring Git and GitHub
+
+Next, you'll need to set up your SSH keys so that [GitHub](https://github.com) can recognize your local machine.
+
+Log in on GitHub, and then go to your settings.
+
+![GitHub settings](https://curriculum-content.s3.amazonaws.com/javacs/github_settings.png)
+
+On the lefthand side of the screen, click "SSH keys".
+
+At the bottom of the "SSH keys" box that shows up on the next screen, click the link for "generating SSH keys" and follow the instructions there.
+
+Now when you go to clone a repository, be sure to clone it with SSH!
+
 ## A Ruby Setup that You'll Like
 
 OS X comes with Ruby (2.0 by default) – don't use it. A bunch of system libraries and utilities depend on it, and if you end up changing something, your system could break in weird and unexpected ways.
