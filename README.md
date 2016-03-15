@@ -46,6 +46,7 @@ Ruby packages are called "gems." Learn provides a command line interface as a ge
 
 ``` bash
 gem install learn-co
+gem install learn-test
 ```
 
 If you run `learn hello`, you can walk through the setup of connecting this interface to your account on learn.co.
@@ -63,7 +64,7 @@ and you should be good to go.
 
 ## Wrap-up
 
-You now have access to the `learn` command in any of the upcoming lessons. `learn` will run your tests, and `learn submit` will submit your work.
+You now have access to the `learn` command in any of the upcoming lessons. `learn-test` will run your tests, and `learn submit` will submit your work.
 
 Happy learning!
 
