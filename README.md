@@ -34,11 +34,11 @@ In general the list of requirements for using Learn are:
 
 2. You should have your GitHub account tied to your shell preferably via [SSH](https://help.github.com/articles/generating-ssh-keys/) but you can use [OSX Keychains](https://help.github.com/articles/updating-credentials-from-the-osx-keychain/).
 
-3. You'll need a way to compile software. If you're on OSX, the best thing you can do is use [XCode](https://developer.apple.com/xcode/downloads/) and [XCode Command Line Tools](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) [download for 10.10 XCode 6.3.1](http://adcdownload.apple.com/Developer_Tools/Command_Line_Tools_OS_X_10.10_for_Xcode_6.3.1/commandlinetoolsosx10.10forxcode6.3.1.dmg) to get GCC.
+3. You'll need a way to compile software. If you're on OSX, the best thing you can do is use [XCode](https://developer.apple.com/xcode/downloads/) and [XCode Command Line Tools](https://developer.apple.com/library/ios/technotes/tn2339/_index.html).
 
-4. You'll probably need a package manager of some sort. We love [Homebrew](http://brew.sh/) on OSX.
+4. You're going to need [git](http://git-scm.com/downloads). It generally comes with most modern operating systems, can be installed via Homebrew, apt-get, and most package managers easily.
 
-5. You're going to need [git](http://git-scm.com/downloads). It generally comes with most modern operating systems, can be installed via Homebrew, apt-get, and most package managers easily. 
+5. You'll probably need a package manager of some sort. We love [Homebrew](http://brew.sh/) on OS X. (A nice thing about `brew`: you can `brew install gcc` if you're running Yosemite or El Capitan, rather than bang your head against the wall trying to build it manually.)
 
 6. A Ruby Interpreter. Having a working interpreter is a great idea because so much tooling is built in Ruby. This is true for Web Development with Python or Javascript, and even for Mobile Development with iOS & XCode. If you can type `ruby -v` and not get an error, you probably have enough of a Ruby environment. If you are studying Web Development with Ruby (such as the Rails framework) you definitely need a great Ruby environment. We love [RVM](https://rvm.io/) for managing Ruby versions and environments.
 
@@ -47,7 +47,6 @@ In general the list of requirements for using Learn are:
 8. A Text Editor. For iOS, XCode is a great IDE. But you'll find the free editors [Sublime Text](http://www.sublimetext.com/) and [Atom](https://atom.io/) useful anyway so go ahead an install them.
 
 Those are the absolute requirements.
-
 
 ## Java and Ant
 
@@ -71,3 +70,5 @@ Happy learning!
 
 - [Guide to installing Ruby (on Rails) on OS X](https://gorails.com/setup/osx/10.11-el-capitan); **ignore the Rails-specific bits**
 - [Homebrew](http://brew.sh/)
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/getting-started-with-learn-osx'>Getting Started With Learn (OS X)</a> on Learn.co and start learning to code for free.</p>
